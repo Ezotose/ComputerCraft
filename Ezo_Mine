@@ -1,3 +1,14 @@
+-- Script qui permet de soit faire une quarry soit creuser une salle
+-- Les coordonnées sont demandés au début.
+-- en cas de reboot de serv ou de non chargement des chunks vous devez replacer la
+-- turtle
+--
+--  Lien Pastebin :
+-- https://pastebin.com/EKrrXh8P
+-- pastebin get EKrrXh8P ezo_mine
+
+
+
 term.setCursorPos(1,1)
 term.clear()
  
