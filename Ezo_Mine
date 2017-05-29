@@ -1,0 +1,40 @@
+term.setCursorPos(1,1)
+term.clear()
+ 
+print("Combien de Longueur :")
+L = read()
+print(" ")
+print("Combien de Largeur:")
+M = read()
+print(" ")
+print("Combien de Profondeur:")
+print("(10.000 pour infinie)")
+H = read()
+print(" ")
+ 
+for i=1,H do
+    for i=1,M do
+     turtle.refuel(1)
+        for i=1,L-1 do
+            turtle.dig()
+            turtle.forward()
+        end
+        for i=1,L-1 do
+                turtle.back()
+        end
+ 
+        turtle.turnLeft()
+        turtle.dig()
+        turtle.forward()
+        turtle.turnRight()
+       
+    end
+        turtle.turnRight()
+            for i=1,M do
+                turtle.forward()
+            end
+ 
+        turtle.turnLeft()
+        turtle.digDown()
+        turtle.down()
+end
