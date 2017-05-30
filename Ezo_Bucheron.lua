@@ -25,33 +25,33 @@ term.setCursorPos(1,1)
 print("[Ezo Bucheron] Lancement du system...")
 print("[Ezo Bucheron] Etape 1/3")
 sleep(1)
- 
- 
+
+
 function turtle.bucher()
-      for i=1,7 do
-        turtle.dig()
-        turtle.digUp()
-        turtle.up()
-      end
-    turtle.dig()
-      while turtle.down() do
-      end
-    turtle.forward()
-    turtle.forward()
-    turtle.turnLeft()
-    turtle.turnLeft()
-    turtle.select(13)
-    turtle.place()
-    turtle.turnLeft()
-    turtle.turnLeft()
-    turtle.select(11)
+	  for i=1,7 do
+		turtle.dig()
+		turtle.digUp()
+	  	turtle.up()
+	  end
+	turtle.dig()
+	  while turtle.down() do
+ 	  end
+	turtle.forward()
+	turtle.forward()
+	turtle.turnLeft()
+	turtle.turnLeft()
+	turtle.select(13)
+	turtle.place()
+	turtle.turnLeft()
+	turtle.turnLeft()
+	turtle.select(11)
 end
 term.clear()
 term.setCursorPos(1,1)
 print("[Ezo Bucheron] Lancement du system...")
 print("[Ezo Bucheron] Etape 2/3")
 sleep(1)
- 
+
      turtle.select(1)
      turtle.refuel(1)
      turtle.select(11)
@@ -62,45 +62,49 @@ print("[Ezo Bucheron] Etape 3/3")
 sleep(1)
 term.clear()
 term.setCursorPos(1,1)
- 
+
 while 2>1 do
- 
-                                    -- ALLER
-    while true do
-        while turtle.forward() do
-            turtle.forward()
-        end
-        if turtle.compare() == true then
-                print("[Ezo Bucheron] Destruction de l'arbre")
-                sleep(1)
-                term.clear()
-                term.setCursorPos(1,1)
-            turtle.bucher()
-        else
-            turtle.select(15)
-            if turtle.compare() == true then
-                    print("[Ezo Bucheron] Demis-tour")
-                    sleep(1)
-                    term.clear()
-                    term.setCursorPos(1,1)
-                turtle.turnLeft()
-                turtle.turnLeft()
-                turtle.select(11)
-            else
-                print("[Ezo Bucheron] Obstacle detecte !")
-                while turtle.forward() == false do
-                    turtle.up()
-                end
-                while turtle.down() == false do
-                    turtle.forward()
-                end
-                while turtle.down() do
-                end
-                    term.clear()
-                    term.setCursorPos(1,1)
-            end     --Fin if2
-        end         --Fin if1
-    turtle.select(11)
-    end             --Fin while true do (aller)
- 
-end                 --Fin while 1=1
+
+									-- ALLER
+	while true do
+		while turtle.forward() do
+			turtle.forward()
+		end
+		if turtle.compare() == true then													-- BUCHE
+				print("[Ezo Bucheron] Destruction de l'arbre")
+				sleep(1)
+				term.clear()
+				term.setCursorPos(1,1)
+			turtle.bucher()
+		else
+			turtle.select(15)
+			if turtle.compare() == true then												-- DEMIS TOUR
+					print("[Ezo Bucheron] Demis-tour")
+					sleep(1)
+					term.clear()
+					term.setCursorPos(1,1)
+				turtle.turnLeft()
+				turtle.turnLeft()
+					for i = 1, 7 do
+						turtle.select(i+4)
+						turtle.dropDown(turtle.getItemCount(i+4)-1)
+					end -- for i
+				turtle.select(11)
+			else																			-- OBSTACLE
+				print("[Ezo Bucheron] Obstacle detecte !")
+				while turtle.forward() == false do
+					turtle.up()
+				end
+				while turtle.down() == false do
+					turtle.forward()
+				end
+				while turtle.down() do
+				end
+					term.clear()
+					term.setCursorPos(1,1)
+			end		--Fin if2
+		end			--Fin if1
+	turtle.select(11)
+	end				--Fin while true do (aller)
+
+end					--Fin while 1=1
