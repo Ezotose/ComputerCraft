@@ -85,7 +85,7 @@ while 2>1 do
 					term.setCursorPos(1,1)
 				turtle.turnLeft()
 				turtle.turnLeft()
-					for i = 1, 7 do
+					for i = 1, 8 do
 						turtle.select(i+4)
 						turtle.dropDown(turtle.getItemCount(i+4)-1)
 					end -- for i
